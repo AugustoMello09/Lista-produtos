@@ -8,4 +8,4 @@ spring:
     name: productApplication
   profiles:
     active:
-    - test
+    - dev

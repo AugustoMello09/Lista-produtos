@@ -1,8 +1,8 @@
 CREATE TABLE tb_product (
-    id uuid not null, 
-    NAME VARCHAR(60) NOT NULL,
-    DESCRIPTION TEXT NOT NULL,
-    AVAILABLE VARCHAR(255) NOT NULL, 
-    PRICE NUMERIC(19, 2) DEFAULT NULL,
+    id binary(16) not null, 
+    name VARCHAR(60) not null,
+    description TEXT not null,
+    available VARCHAR(255) not null, 
+    price NUMERIC(19, 2) not null,
     primary key (id)
 );
