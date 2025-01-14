@@ -35,9 +35,18 @@
         <div class="flex menor:flex-col justify-between items-center w-full p-2">
 
           <div>
-            <p class="font-dm font-bold text-black break-words text-base p-1 menor:text-left"> {{ product.name }} </p>
-            <p class="font-dm font-bold text-black break-words text-base p-1 menor:text-left"> {{ product.description }} </p>
-            <p class="font-Gro font-normal text-black text-sm p-1 menor:text-left" *ngIf="product.price === 0">Não haverá custo</p> 
+            <p class="font-dm font-bold text-black text-base p-1 menor:text-left"> {{ product.name }} </p>
+            <p class="font-dm font-bold text-black text-base p-1 menor:text-left"> {{ product.description }} </p>
+            <p class="font-Gro font-normal text-black text-sm p-1 menor:text-left" *ngIf="product.price === 0">Não haverá custo
+              <span 
+                class="font-Gro font-normal text-gray-700 text-sm p-1 menor:text-left" 
+                [ngClass]="{
+                  'text-green-500': product.available === 'AVAILABLE',
+                  'text-red-500': product.available === 'UNAVAILABLE'
+                }">
+               {{ product.available === 'AVAILABLE' ? 'Disponível' : 'Indisponível' }}
+              </span>
+            </p> 
             <p class="font-Gro font-normal text-black text-sm p-1 menor:text-left" *ngIf="product.price > 0">{{ product.price | currency:'BRL':'symbol':'1.2-2' }}
               <span 
                 class="font-Gro font-normal text-gray-700 text-sm p-1 menor:text-left" 

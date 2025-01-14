@@ -39,3 +39,8 @@ body::-webkit-scrollbar-thumb {
 p {
   word-break: break-all !important;
 }
+
+.mat-dialog-container  {
+  box-shadow: none !important;
+  background: none !important;
+}
